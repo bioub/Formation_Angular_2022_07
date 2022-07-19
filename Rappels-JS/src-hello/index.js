@@ -12,4 +12,3 @@ const content = hello('Romain');
 pEl.append(content);
 
 document.body.append(pEl);
-
