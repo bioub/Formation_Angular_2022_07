@@ -1,4 +1,4 @@
-import { createTodoItem } from "./todos.js";
+import { createTodoItem, createTodoItemTitle, createTodoItemTitleEdit } from './todos.js';
 
 /** @type {HTMLFormElement} */
 const formEl = document.querySelector('.todo-form');
@@ -24,7 +24,6 @@ formEl.addEventListener('submit', (event) => {
   listEl.append(itemEl);
 });
 
-
 listEl.addEventListener('click', (event) => {
   // console.log('event.target', event.target);
   // console.log('event.currentTarget', event.currentTarget);
@@ -48,5 +47,33 @@ toggleEl.addEventListener('click', () => {
 
   for (const checkboxEl of checkboxEls) {
     checkboxEl.checked = toggleEl.checked;
+  }
+});
+
+listEl.addEventListener('dblclick', (event) => {
+  if (event.target.classList.contains('todo-item-title')) {
+    /** @type {HTMLSpanElement} */
+    const spanEl = event.target;
+
+    spanEl.replaceWith(createTodoItemTitleEdit(spanEl.innerText));
+  }
+});
+
+window.addEventListener('click', (event) => {
+  /** @type {HTMLInputElement} */
+  const editEl = listEl.querySelector('.todo-item-title-edit');
+
+  if (editEl && event.target !== editEl) {
+    editEl.replaceWith(createTodoItemTitle(editEl.value));
+  }
+});
+
+
+listEl.addEventListener('keydown', (event) => {
+  if (event.target.classList.contains('todo-item-title-edit') && event.key === 'Enter') {
+    /** @type {HTMLInputElement} */
+    const inputEl = event.target;
+
+    inputEl.replaceWith(createTodoItemTitle(inputEl.value));
   }
 });
