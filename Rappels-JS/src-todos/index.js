@@ -10,7 +10,6 @@ const inputEl = document.querySelector('.todo-form-input');
 const listEl = document.querySelector('.todos-list');
 
 formEl.addEventListener('submit', (event) => {
-  console.log('submit fired');
   event.preventDefault();
 
   const itemEl = createTodoItem({
@@ -21,3 +20,9 @@ formEl.addEventListener('submit', (event) => {
 
   listEl.append(itemEl);
 });
+
+// Exercice 3
+// Sélectionner la checkbox
+// <input type="checkbox" class="todo-form-toggle" />
+// au clic de celle-ci, cocher ou décocher toutes les
+// checkbox dans todo-item (créée à l'exercice 1)
