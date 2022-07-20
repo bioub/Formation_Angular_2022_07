@@ -15,4 +15,17 @@ export class ExMultiStateButtonComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  selectNext() {
+    const selectedIndex = this.items.indexOf(this.selected);
+    const nextIndex = (selectedIndex + 1) % this.items.length;
+    this.selected = this.items[nextIndex];
+
+    /*
+    si selectedIndex vaut 2 (sur le dernier du tableau)
+         3|3
+         -+-----
+(modulo) 0|1 (quotien )
+          |
+    */
+  }
 }
