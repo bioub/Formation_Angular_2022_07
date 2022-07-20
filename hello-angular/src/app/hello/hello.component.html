@@ -1,1 +1,24 @@
 <p>hello {{ name }}!</p>
+
+<!--
+Dans une interpolation {{ }}
+on peut utiliser des expressions proche de JavaScript
+-->
+
+<!-- <div>{{ 1 + 1 }}</div>
+<div>{{ 2 * 3 }}</div> -->
+
+<!-- pas conseillé d'appeler une fonction -->
+<!-- <div>{{ name.toUpperCase() }}</div> -->
+
+<!-- à la place, utiliser un pipe -->
+<!-- <div>{{ name | uppercase }}</div> -->
+
+<!-- 
+Certaines expressions JavaScript ne fonctionnent pas dans un 
+une interpolation
+<div>{{ 2 ** 3 }}</div>
+-->
+
+<!-- pas d'accès aux variables globales -->
+<!-- {{ Math.random() }} -->

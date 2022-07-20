@@ -61,7 +61,7 @@ window.addEventListener('click', (event) => {
 });
 
 listEl.addEventListener('keydown', (event) => {
-  const target = event.target as HTMLElement;
+  const target = event.target as any;
 
   if (target.classList.contains('todo-item-title-edit') && event.key === 'Enter') {
     target.replaceWith(createTodoItemTitle((target as HTMLInputElement).value));

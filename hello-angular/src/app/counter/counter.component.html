@@ -1,0 +1,17 @@
+<!-- <input type="number" [valueAsNumber]="count" (input)="count = $any($event.target).valueAsNumber"> -->
+<input type="number" [valueAsNumber]="count" (input)="updateCount($event)">
+<!-- <button (click)="count = count + 1">+</button> -->
+<!-- <button (click)="count = count - 1">-</button> -->
+<button (click)="increment()">+</button>
+<button (click)="decrement()">-</button>
+
+<!-- pas de problème de passer une fonction avec les
+event bindings (contrairement à {{}} et []) -->
+
+<!--
+  const btnPlusEl = document.querySelector('.btn-plus');
+  btnPlusEl.addEventListener('click', ($event) => {
+    this.increment();
+    // refresh();
+  });
+-->

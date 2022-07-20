@@ -1,0 +1,23 @@
+<form>
+  <div>
+    <!--
+      Ne pas utiliser les attributs pour passer un binding
+      Username : <input type="text" value="{{ user.username }}"> -->
+      Username : <input type="text" [value]="user.username" [className]="user.username">
+
+      <!-- équivalent à : inputEl.value = user.username;
+        avec le binding (synchronisation)
+        voir HTMLInputElement pour les propriétés possibles
+      -->
+  </div>
+  <div>
+    Email : <input type="email" [value]="user.email">
+  </div>
+  <div>
+    <!-- avec property binding pas de conversion -->
+    Active : <input type="checkbox" [checked]="user.isActive">
+  </div>
+  <button>Update</button>
+
+  <p>Username : {{ user.username }}</p>
+</form>
