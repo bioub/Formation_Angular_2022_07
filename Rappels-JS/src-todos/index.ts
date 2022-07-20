@@ -1,8 +1,4 @@
-import {
-  createTodoItem,
-  createTodoItemTitle,
-  createTodoItemTitleEdit,
-} from './todos';
+import { createTodoItem, createTodoItemTitle, createTodoItemTitleEdit } from './todos';
 
 const formEl = document.querySelector('.todo-form') as HTMLFormElement;
 const inputEl = document.querySelector('.todo-form-input') as HTMLInputElement;
@@ -21,6 +17,7 @@ formEl.addEventListener('submit', (event) => {
   listEl.append(itemEl);
 });
 
+// Exercice 2 : clic du bouton moins
 listEl.addEventListener('click', (event) => {
   // console.log('event.target', event.target);
   // console.log('event.currentTarget', event.currentTarget);
@@ -66,10 +63,7 @@ window.addEventListener('click', (event) => {
 listEl.addEventListener('keydown', (event) => {
   const target = event.target as HTMLElement;
 
-  if (
-    target.classList.contains('todo-item-title-edit') &&
-    event.key === 'Enter'
-  ) {
+  if (target.classList.contains('todo-item-title-edit') && event.key === 'Enter') {
     target.replaceWith(createTodoItemTitle((target as HTMLInputElement).value));
   }
 });
