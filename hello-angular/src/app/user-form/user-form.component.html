@@ -3,19 +3,78 @@
     <!--
       Ne pas utiliser les attributs pour passer un binding
       Username : <input type="text" value="{{ user.username }}"> -->
-      Username : <input type="text" [value]="user.username" [className]="user.username">
+    Username :
+    <input
+      type="text"
+      [value]="user.username"
+      (input)="user.username = $any($event.target).value"
+      [style]="user.username === '' ? 'border: 1px solid red' : ''"
+    />
+    <input
+      type="text"
+      [value]="user.username"
+      (input)="user.username = $any($event.target).value"
+      [style.border]="user.username === '' && '1px solid red'"
+    />
+    <input
+      type="text"
+      [value]="user.username"
+      (input)="user.username = $any($event.target).value"
+      [ngStyle]="{border: user.username === '' && '1px solid red'}"
+    />
 
-      <!-- équivalent à : inputEl.value = user.username;
+    <!-- équivalent à : inputEl.value = user.username;
         avec le binding (synchronisation)
         voir HTMLInputElement pour les propriétés possibles
       -->
   </div>
   <div>
-    Email : <input type="email" [value]="user.email">
+    Email :
+    <input
+      type="email"
+      [value]="user.email"
+      (input)="user.email = $any($event.target).value"
+      [className]="user.email === '' ? 'invalid' : ''"
+    />
+    <input
+      type="email"
+      [value]="user.email"
+      (input)="user.email = $any($event.target).value"
+      [class]="user.email === '' ? 'invalid' : ''"
+    />
+    <input
+      type="email"
+      [value]="user.email"
+      (input)="user.email = $any($event.target).value"
+      [class.invalid]="user.email === ''"
+    />
+    <input
+      type="email"
+      [value]="user.email"
+      (input)="user.email = $any($event.target).value"
+      [ngClass]="{invalid: user.email === ''}"
+    />
+    <!-- <ng-template [ngIf]="user.email === ''">
+      <p>Erreur: le champ est obligatoire</p>
+    </ng-template> -->
+    <p *ngIf="user.email === ''">Erreur: le champ est obligatoire</p>
+  </div>
+  <div>
+    Phone :
+    <input
+      type="tel"
+      [value]="user.phone"
+      (input)="user.phone = $any($event.target).value"
+    />
   </div>
   <div>
     <!-- avec property binding pas de conversion -->
-    Active : <input type="checkbox" [checked]="user.isActive">
+    Active :
+    <input
+      type="checkbox"
+      [checked]="user.isActive"
+      (click)="user.username = $any($event.target).checked"
+    />
   </div>
   <button>Update</button>
 

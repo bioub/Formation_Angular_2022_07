@@ -8,6 +8,7 @@ import { UserFormComponent } from './user-form/user-form.component';
 import { CounterComponent } from './counter/counter.component';
 import { ExBasicsComponent } from './ex-basics/ex-basics.component';
 import { ExMultiStateButtonComponent } from './ex-multi-state-button/ex-multi-state-button.component';
+import { SelectComponent } from './select/select.component';
 
 @NgModule({
   declarations: [
@@ -17,10 +18,12 @@ import { ExMultiStateButtonComponent } from './ex-multi-state-button/ex-multi-st
     UserFormComponent,
     CounterComponent,
     ExBasicsComponent,
-    ExMultiStateButtonComponent
+    ExMultiStateButtonComponent,
+    SelectComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule, // exports CommonModule donc de ngIf, ngStyle, ngClass...
+
   ],
   providers: [],
   bootstrap: [AppComponent]

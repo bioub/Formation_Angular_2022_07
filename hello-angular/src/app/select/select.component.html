@@ -1,0 +1,12 @@
+<div class="selected" (click)="menuOpen = !menuOpen">
+  {{ selected }}
+</div>
+<div class="menu" *ngIf="menuOpen">
+  <div class="item" *ngFor="let item of items">{{ item }}</div>
+</div>
+
+<!--
+  for (const item of items) {
+    // item
+  }
+-->
