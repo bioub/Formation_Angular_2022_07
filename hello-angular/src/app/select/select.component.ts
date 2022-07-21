@@ -1,4 +1,4 @@
-import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, EventEmitter, HostListener, Input, OnInit, Output, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-select',
@@ -7,9 +7,11 @@ import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular
 })
 export class SelectComponent implements OnInit {
 
-  items = ['Romain', 'Jean', 'Eric'];
+  @Input() items = ['Romain', 'Jean', 'Eric'];
   selected = 'Jean';
   menuOpen = false;
+
+  @Output() change = new EventEmitter<string>();
 
   // @ViewChild('containerRef') containerRef!: ElementRef<HTMLDivElement>;
 
@@ -25,6 +27,9 @@ export class SelectComponent implements OnInit {
   select(item: string) {
     this.selected = item;
     this.menuOpen = false;
+
+    // remonte l'élément au parent
+    this.change.emit(item);
   }
 
   // @HostListener('click', ['$event'])

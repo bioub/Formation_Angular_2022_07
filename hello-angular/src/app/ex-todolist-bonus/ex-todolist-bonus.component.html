@@ -1,0 +1,47 @@
+<form class="todo-form" (submit)="addTodo($event)">
+  <input type="checkbox" class="todo-form-toggle" (click)="toggleComplete($any($event.target).checked)"/>
+  <input class="todo-form-input" [value]="newTodo" (input)="newTodo = $any($event.target).value" />
+  <button>+</button>
+</form>
+<div class="todos-list">
+  <div class="todo-item" [attr.data-todo-id]="todo.id" *ngFor="let todo of todos">
+    <input type="checkbox" class="todo-item-completed" [checked]="todo.completed" />
+    <span class="todo-item-title" (dblclick)="editingTodo = todo" *ngIf="editingTodo !== todo"> {{ todo.title }} </span>
+    <input class="todo-item-title-edit" type="text" [value]="todo.title" (input)="todo.title = $any($event.target).value" (keydown)="inputEnter($event)"  *ngIf="editingTodo === todo" />
+    <button class="todo-item-button-delete" (click)="deleteTodo(todo)">-</button>
+  </div>
+</div>
+
+
+<!--
+  Exercice 1 (property binding, ngFor, interpolation) :
+  - Afficher dans le champ todo-form-input la valeur contenue dans
+  la propriété newTodo
+  - Avec ngFor, afficher le tableau contenu dans la propriété todos
+  sous forme de :
+  <div class="todo-item" data-todo-id="0.4332215605121956">
+    <input type="checkbox" class="todo-item-completed" />
+    <span class="todo-item-title"> ABC </span>
+    <button class="todo-item-button-delete">-</button>
+  </div>
+  (afficher id dans data-todo-id, completed dans la checkbox et title dans todo-item-title)
+
+  Exercice 2 (event binding) :
+  - Ecouter l'événement input sur todo-form-input et mettre à jour newTodo
+  avec la valeur saisie
+  - Ecouter l'événement submit du formulaire (appeler event.preventDefault())
+  et insérer une todo dans le tableau todos ex :
+  {
+    id: Math.random(),
+    title: 'LA VALEUR SAISIE',
+    completed: false,
+  }
+  La liste va se raffraichir
+
+  Exercice 3 :
+  Au clic du bouton moins supprimer la ligne
+
+  Exercice 4 :
+  Au click de la checkbox todo-form-toggle, cocher ou décocher
+  toutes les autres
+-->

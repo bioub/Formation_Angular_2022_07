@@ -15,7 +15,13 @@
 <app-ex-multi-state-button></app-ex-multi-state-button>
 
 <h2>select (ngFor, résumé)</h2>
-<app-select></app-select>
+<app-select [items]="['Toto', 'Titi', 'Tata']" (change)="handleChange($event)"></app-select>
 
 <h2>Exercice Todolist (résumé templates)</h2>
 <app-ex-todolist></app-ex-todolist>
+
+<h2>Exercice Todolist (Bonus)</h2>
+<app-ex-todolist-bonus></app-ex-todolist-bonus>
+
+<h2>ng-select (input, output)</h2>
+<ng-select [items]="['Romain', 'Eric', 'Jean']" (change)="handleChange($event)"></ng-select>

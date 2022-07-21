@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { NgSelectModule } from "@ng-select/ng-select";
 
 import { AppComponent } from './app.component';
 import { HelloComponent } from './hello/hello.component';
@@ -10,6 +11,7 @@ import { ExBasicsComponent } from './ex-basics/ex-basics.component';
 import { ExMultiStateButtonComponent } from './ex-multi-state-button/ex-multi-state-button.component';
 import { SelectComponent } from './select/select.component';
 import { ExTodolistComponent } from './ex-todolist/ex-todolist.component';
+import { ExTodolistBonusComponent } from './ex-todolist-bonus/ex-todolist-bonus.component';
 
 @NgModule({
   declarations: [
@@ -21,11 +23,12 @@ import { ExTodolistComponent } from './ex-todolist/ex-todolist.component';
     ExBasicsComponent,
     ExMultiStateButtonComponent,
     SelectComponent,
-    ExTodolistComponent
+    ExTodolistComponent,
+    ExTodolistBonusComponent,
   ],
   imports: [
     BrowserModule, // exports CommonModule donc de ngIf, ngStyle, ngClass...
-
+    NgSelectModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
