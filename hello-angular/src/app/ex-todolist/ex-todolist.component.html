@@ -1,14 +1,14 @@
-<form class="todo-form">
-  <input type="checkbox" class="todo-form-toggle" />
-  <input class="todo-form-input" />
+<form class="todo-form" (submit)="addTodo($event)">
+  <input type="checkbox" class="todo-form-toggle" (click)="toggleComplete($any($event.target).checked)"/>
+  <input class="todo-form-input" [value]="newTodo" (input)="newTodo = $any($event.target).value" />
   <button>+</button>
 </form>
 <div class="todos-list">
-  <!-- <div class="todo-item" data-todo-id="0.4332215605121956">
-    <input type="checkbox" class="todo-item-completed" />
-    <span class="todo-item-title"> ABC </span>
-    <button class="todo-item-button-delete">-</button>
-  </div> -->
+  <div class="todo-item" [attr.data-todo-id]="todo.id" *ngFor="let todo of todos">
+    <input type="checkbox" class="todo-item-completed" [checked]="todo.completed" />
+    <span class="todo-item-title"> {{ todo.title }} </span>
+    <button class="todo-item-button-delete" (click)="deleteTodo(todo)">-</button>
+  </div>
 </div>
 
 

@@ -12,6 +12,8 @@ export class ClockComponent implements OnInit {
   constructor() {
     setInterval(() => {
       this.now = new Date();
+      // detectChanges();
+      // grace à Zone.js on peut intercepter les callbacks asynchrones
     }, 1000);
   }
 
