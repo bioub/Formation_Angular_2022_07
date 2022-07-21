@@ -9,6 +9,7 @@ import { CounterComponent } from './counter/counter.component';
 import { ExBasicsComponent } from './ex-basics/ex-basics.component';
 import { ExMultiStateButtonComponent } from './ex-multi-state-button/ex-multi-state-button.component';
 import { SelectComponent } from './select/select.component';
+import { ExTodolistComponent } from './ex-todolist/ex-todolist.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { SelectComponent } from './select/select.component';
     CounterComponent,
     ExBasicsComponent,
     ExMultiStateButtonComponent,
-    SelectComponent
+    SelectComponent,
+    ExTodolistComponent
   ],
   imports: [
     BrowserModule, // exports CommonModule donc de ngIf, ngStyle, ngClass...
