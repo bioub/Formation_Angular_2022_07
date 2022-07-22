@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-ex-multi-state-button',
@@ -7,8 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ExMultiStateButtonComponent implements OnInit {
 
-  items = ['Romain', 'Jean', 'Eric'];
-  selected = 'Jean';
+  @Input() items = ['Romain', 'Jean', 'Eric'];
+  @Input() selected = 'Jean';
+
+  @Output() selectedChange = new EventEmitter<string>();
 
   constructor() { }
 
@@ -20,6 +22,7 @@ export class ExMultiStateButtonComponent implements OnInit {
     const nextIndex = (selectedIndex + 1) % this.items.length;
     this.selected = this.items[nextIndex];
 
+    this.selectedChange.emit(this.selected);
     // 0 = 3 x 0 + 0
     // 1 = 3 x 0 + 1
     // 2 = 3 x 0 + 2

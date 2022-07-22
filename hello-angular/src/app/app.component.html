@@ -1,5 +1,6 @@
 <h2>hello (text interpolation)</h2>
 <app-hello></app-hello>
+<app-hello [name]="prenom"></app-hello>
 
 <h2>clock (binding, lifecycle)</h2>
 <app-clock></app-clock>
@@ -13,6 +14,17 @@
 <h2>Exercices (text interpolation, property + event binding, template ref)</h2>
 <app-ex-basics></app-ex-basics>
 <app-ex-multi-state-button></app-ex-multi-state-button>
+<app-ex-multi-state-button [items]="['Toto', 'Titi', 'Tata']" [selected]="prenom" (selectedChange)="prenom = $event"></app-ex-multi-state-button>
+<app-ex-multi-state-button [items]="['Toto', 'Titi', 'Tata']" [(selected)]="prenom"></app-ex-multi-state-button>
+<!--
+  Nouvelle syntaxe Two Way Binding [()]
+  BANANA IN A BOX
+  - input appeler d'une certaine façon (ici selected) et le nom de l'output = nom de l'input + Change
+  - l'input reçoit obligatoirement une variable
+  - quand l'output est emit, $event va dans cette variable
+-->
+
+<p>Valeur sélectionnée : {{ prenom }}</p>
 
 <h2>select (ngFor, résumé)</h2>
 <app-select [selected]="prenom" [items]="['Toto', 'Titi', 'Tata']" (change)="handleChange($event)"></app-select>

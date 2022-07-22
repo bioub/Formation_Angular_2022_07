@@ -5,6 +5,9 @@
 		},
 		{
 			"path": "hello-angular"
+		},
+		{
+			"path": "my-app"
 		}
 	],
 	"settings": {}
