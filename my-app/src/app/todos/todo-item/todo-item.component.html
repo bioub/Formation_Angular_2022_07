@@ -1,0 +1,3 @@
+<input type="checkbox" class="todo-item-completed" [checked]="todo.completed" />
+<span class="todo-item-title"> {{ todo.title }} </span>
+<button class="todo-item-button-delete" (click)="deleteTodo(todo)">-</button>
