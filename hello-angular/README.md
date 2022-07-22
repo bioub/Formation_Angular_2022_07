@@ -1,27 +1,20 @@
-# HelloAngular
+# Exercices Angular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.6.
+## Input / Output
 
-## Development server
+### Exercice 1
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Modifier le code du composant `HelloComponent` de sorte que `name` soit une propriété en `@Input` et lui passer la valeur de `prenom` définie en propriété de `App`
 
-## Code scaffolding
+### Exercice 2
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Modifier le code du composant `ExMultiStateButtonComponent` et lui passer les mêmes `@Input` et `@Output` que `SelectComponent` :
 
-## Build
+- Input `items` (passer un tableau de prénoms) et `selected` (passer la propriété `prenom` de `App`)
+- Output `change` qui remonte la valeur dans `prenom`
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Exercice 3
 
-## Running unit tests
+Enoncé à la slide 104
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Reprennez soit correction `ex-todolist` soit votre code.

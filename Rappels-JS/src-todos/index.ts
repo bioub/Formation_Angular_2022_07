@@ -67,3 +67,8 @@ listEl.addEventListener('keydown', (event) => {
     target.replaceWith(createTodoItemTitle((target as HTMLInputElement).value));
   }
 });
+
+
+
+
+// listEl.dispatchEvent(new Event('tripleclick'));

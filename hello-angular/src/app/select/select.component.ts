@@ -8,7 +8,7 @@ import { Component, ElementRef, EventEmitter, HostListener, Input, OnInit, Outpu
 export class SelectComponent implements OnInit {
 
   @Input() items = ['Romain', 'Jean', 'Eric'];
-  selected = 'Jean';
+  @Input() selected = 'Jean';
   menuOpen = false;
 
   @Output() change = new EventEmitter<string>();
@@ -19,7 +19,7 @@ export class SelectComponent implements OnInit {
   // constructor(hostRef: ElementRef) {
   //   this.hostRef = hostRef;
   // }
-  constructor(private hostRef: ElementRef) {}
+  constructor(private hostRef: ElementRef<HTMLElement>) {}
 
   ngOnInit(): void {
   }
@@ -39,7 +39,7 @@ export class SelectComponent implements OnInit {
 
   @HostListener('window:click', ['$event'])
   windowClick(event: PointerEvent) {
-    if (this.hostRef.nativeElement.contains(event.target)) {
+    if (this.hostRef.nativeElement.contains(event.target as HTMLElement)) {
       return;
     }
 

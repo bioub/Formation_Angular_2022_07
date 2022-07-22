@@ -12,6 +12,8 @@ import { ExMultiStateButtonComponent } from './ex-multi-state-button/ex-multi-st
 import { SelectComponent } from './select/select.component';
 import { ExTodolistComponent } from './ex-todolist/ex-todolist.component';
 import { ExTodolistBonusComponent } from './ex-todolist-bonus/ex-todolist-bonus.component';
+import { LimitPipe } from './limit.pipe';
+import { HighlightDirective } from './highlight.directive';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,8 @@ import { ExTodolistBonusComponent } from './ex-todolist-bonus/ex-todolist-bonus.
     SelectComponent,
     ExTodolistComponent,
     ExTodolistBonusComponent,
+    LimitPipe,
+    HighlightDirective,
   ],
   imports: [
     BrowserModule, // exports CommonModule donc de ngIf, ngStyle, ngClass...

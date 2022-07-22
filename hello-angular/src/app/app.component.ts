@@ -5,7 +5,10 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
 })
 export class AppComponent {
+
+  prenom = 'Toto';
+
   handleChange(val: any) {
-    console.log(val);
+    this.prenom = val;
   }
 }
