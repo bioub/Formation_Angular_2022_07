@@ -1,0 +1,21 @@
+// nav {
+//   background-color: honeydew;
+//   padding: 10px;
+// }
+
+// nav a {
+//   margin-right: 10px;
+// }
+
+nav {
+  background-color: honeydew;
+  padding: 10px;
+
+  a {
+    margin-right: 10px;
+  }
+
+  a.current-page {
+    font-weight: bold;
+  }
+}

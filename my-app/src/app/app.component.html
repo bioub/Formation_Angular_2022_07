@@ -1,1 +1,14 @@
-<my-todos></my-todos>
+<nav>
+  <a routerLink="/" routerLinkActive="current-page" [routerLinkActiveOptions]="{exact:true}">Home</a>
+  <a routerLink="/about" routerLinkActive="current-page">About</a>
+  <a routerLink="/todos" routerLinkActive="current-page">Todos</a>
+</nav>
+
+<router-outlet></router-outlet>
+<!-- un composant qui matche une URL paramétrée dans le route
+s'affiche ici -->
+
+<hr>
+<p>
+  Copyright 2022 Nous
+</p>

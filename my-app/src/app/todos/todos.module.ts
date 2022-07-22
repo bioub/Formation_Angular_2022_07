@@ -20,7 +20,7 @@ import { TodoItemComponent } from './todo-item/todo-item.component';
     TodosRoutingModule
   ],
   exports: [
-    TodosComponent
+    // TodosComponent
   ]
 })
 export class TodosModule { }

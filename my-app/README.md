@@ -1,27 +1,27 @@
 # MyApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.6.
+## Exercice Router
 
-## Development server
+Créer 3 composants dans le module `users`
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+* `users` qui sera à la racine du module `users` (4 fichiers sans répertoire)
+* `user-add`
+* `user-details`
 
-## Code scaffolding
+Dans le routing module de users, créer 3 routes
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+* `/users` pour le composant `UsersComponent`
+* `/users/add` pour le composant `UserAddComponent`
+* `/users/:userId` pour le composant `UserDetailsComponent`
 
-## Build
+Pour ce dernier composant, les URL contiendront un paramètre, on ne fera pas un lien vers `/users/:userId` mais par exemple `/users/123` (si l'on souhaite afficher le user dont l'id est 123)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Charger le module `UsersModule` dans `AppModule` (attention à l'ordre)
 
-## Running unit tests
+Créer un lien vers `/users` dans la top-bar
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Dans le template de `UsersComponent` créer un liste de nom d'utilisateur avec des lien (ex: Jean Dupont, lien vers `/users/1`)
 
-## Running end-to-end tests
+Ajouter également un lien vers la page `UserAdd`.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Utiliser routerLinkActive dans la top-bar et dans `UsersComponent`
