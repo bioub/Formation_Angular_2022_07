@@ -1,0 +1,20 @@
+<form (submit)="logUser()">
+  <div>
+    Username :
+    <input type="text" name="username" [(ngModel)]="user.username" required #username="ngModel" />
+  </div>
+  <div>
+    Email :
+    <input type="email" name="email" [(ngModel)]="user.email" email #email="ngModel" />
+    <p *ngIf="email.invalid && email.touched">Le mail n'est pas valide</p>
+  </div>
+  <div>
+    Phone :
+    <input type="tel" name="phone" [(ngModel)]="user.phone" />
+  </div>
+  <div>
+    Active :
+    <input type="checkbox" name="isActive" [(ngModel)]="user.isActive" />
+  </div>
+  <button>Update</button>
+</form>

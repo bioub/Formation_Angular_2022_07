@@ -38,4 +38,8 @@
 <app-ex-todolist-bonus></app-ex-todolist-bonus>
 
 <h2 appHighlight>ng-select (input, output)</h2>
-<ng-select [items]="['Romain', 'Eric', 'Jean']" (change)="handleChange($event)"></ng-select>
+<ng-select [ngModel]="prenom" [items]="['Romain', 'Eric', 'Jean']" (change)="handleChange($event)"></ng-select>
+
+
+<h2>user-form-template-driven (Template Driven Forms)</h2>
+<app-user-form-template-driven></app-user-form-template-driven>

@@ -14,6 +14,8 @@ import { ExTodolistComponent } from './ex-todolist/ex-todolist.component';
 import { ExTodolistBonusComponent } from './ex-todolist-bonus/ex-todolist-bonus.component';
 import { LimitPipe } from './limit.pipe';
 import { HighlightDirective } from './highlight.directive';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { UserFormTemplateDrivenComponent } from './user-form-template-driven/user-form-template-driven.component';
 
 @NgModule({
   declarations: [
@@ -29,10 +31,13 @@ import { HighlightDirective } from './highlight.directive';
     ExTodolistBonusComponent,
     LimitPipe,
     HighlightDirective,
+    UserFormTemplateDrivenComponent
   ],
   imports: [
     BrowserModule, // exports CommonModule donc de ngIf, ngStyle, ngClass...
-    NgSelectModule, // exports NgSelectComponent
+    NgSelectModule, // exports NgSelectComponent,
+    // ReactiveFormsModule, // Reactive Forms
+    FormsModule, // Template driven Forms
   ],
   providers: [],
   bootstrap: [AppComponent]

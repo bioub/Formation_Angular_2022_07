@@ -1,1 +1,8 @@
-<p>user-add works!</p>
+<form [formGroup]="userForm">
+  <p>Name: <input type="text" formControlName="name" /></p>
+  <p>Username: <input type="text" formControlName="username" /></p>
+  <p>Email: <input type="email" formControlName="email" /></p>
+  <p>
+    <button>Add</button>
+  </p>
+</form>
