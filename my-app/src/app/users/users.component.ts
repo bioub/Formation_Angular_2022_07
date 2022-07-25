@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient, HttpHandler, HttpXhrBackend } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'my-users',
@@ -8,10 +9,13 @@ import { HttpClient, HttpHandler, HttpXhrBackend } from '@angular/common/http';
 })
 export class UsersComponent implements OnInit {
 
-  constructor() { }
+  constructor(private title: Title, private httpClient: HttpClient) {
+    this.title.setTitle('Users - MyApp');
+  }
 
   ngOnInit(): void {
-    // const httpHandler = new HttpXhrBackend();
+    // const xhrFactory = new XHRFactory();
+    // const httpHandler = new HttpXhrBackend(xhrFactory);
     // const httpClient = new HttpClient(httpHandler);
     // fetch()
     // const xhr = new XMLHttpRequest();

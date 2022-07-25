@@ -8,6 +8,7 @@ import { HomeComponent } from './core/home/home.component';
 import { AboutComponent } from './core/about/about.component';
 import { NotFoundComponent } from './core/not-found/not-found.component';
 import { UsersModule } from './users/users.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { UsersModule } from './users/users.module';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule, // permet de demander HttpClient au niveau d'un constructeur
     TodosModule, // avant AppRoutingModule
     UsersModule, // avant AppRoutingModule
     AppRoutingModule, // en dernier à cause de la route **
