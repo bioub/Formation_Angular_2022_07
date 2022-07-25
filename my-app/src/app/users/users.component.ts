@@ -27,5 +27,9 @@ export class UsersComponent implements OnInit {
       this.loading = false; // la réponse est reçu
     });
     this.loading = true; // la requete est envoyé
+
+    this.userService.add.subscribe((user) => {
+      this.users.push(user);
+    });
   }
 }

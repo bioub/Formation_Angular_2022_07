@@ -1,11 +1,15 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 import { User } from './user.interface';
 
 @Injectable({
   providedIn: 'root',
 })
 export class UserService {
+
+  add = new Subject<User>();
+
   constructor(private httpClient: HttpClient) {}
 
   getAll() {

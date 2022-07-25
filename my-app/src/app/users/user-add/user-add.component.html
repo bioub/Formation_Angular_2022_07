@@ -1,5 +1,8 @@
-<form [formGroup]="userForm">
-  <p>Name: <input type="text" formControlName="name" /></p>
+<form [formGroup]="userForm" (ngSubmit)="createUser()">
+  <p>
+    Name: <input type="text" formControlName="name" />
+    <span *ngIf="userForm.controls.name.invalid && userForm.controls.name.touched">Name is required</span>
+  </p>
   <p>Username: <input type="text" formControlName="username" /></p>
   <p>Email: <input type="email" formControlName="email" /></p>
   <p>
