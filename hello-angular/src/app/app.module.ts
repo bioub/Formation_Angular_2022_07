@@ -32,7 +32,7 @@ import { HighlightDirective } from './highlight.directive';
   ],
   imports: [
     BrowserModule, // exports CommonModule donc de ngIf, ngStyle, ngClass...
-    NgSelectModule,
+    NgSelectModule, // exports NgSelectComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
