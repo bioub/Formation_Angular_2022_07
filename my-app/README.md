@@ -25,3 +25,19 @@ Dans le template de `UsersComponent` créer un liste de nom d'utilisateur avec d
 Ajouter également un lien vers la page `UserAdd`.
 
 Utiliser routerLinkActive dans la top-bar et dans `UsersComponent`
+
+## Exercice Service / HttpClient
+
+Avec le programme `ng` créer un service `todos/todo.service.ts`
+
+Dans ce service, injecter `HttpClient` (comme dans `UserService`)
+
+Créer une méthode `getAll` dans ce service qui ira récupérer les todos sur la requête :
+
+```
+GET https://jsonplaceholder.typicode.com/todos
+```
+
+Dans `TodosComponent` injecter `TodoService`
+
+Dans la méthode `ngOnInit` de  `TodosComponent`, appeler la méthode `getAll` de `TodoService` et via le callback de `.subscribe` (comme dans `UsersComponent`) récupérer les todos du serveur et les ajouter au tableau.
