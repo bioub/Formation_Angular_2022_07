@@ -5,7 +5,10 @@
 <app-hello [name]="prenom"></app-hello> <!-- Hello Toto! -->
 
 <h2>clock (binding, lifecycle)</h2>
-<app-clock></app-clock>
+<p>Format : <input [(ngModel)]="format" /></p>
+<p>Délai : <input [(ngModel)]="delay" /></p>
+<p><button (click)="show = !show">{{ show ? 'Hide' : 'Show' }}</button></p>
+<app-clock *ngIf="show" [format]="format" [delay]="delay"></app-clock>
 
 <h2>user-form (property binding, class binding, style binding, directives)</h2>
 <app-user-form></app-user-form>
