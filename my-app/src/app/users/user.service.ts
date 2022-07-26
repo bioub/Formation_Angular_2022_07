@@ -8,7 +8,7 @@ import { User } from './user.interface';
 })
 export class UserService {
 
-  add = new Subject<User>();
+  add = new Subject<User>(); // new EventEmitter
 
   constructor(private httpClient: HttpClient) {}
 
@@ -18,7 +18,7 @@ export class UserService {
     // });
     // console.log('requete envoyé');
     return this.httpClient.get<User[]>(
-      'https://jsonplaceholder.typicode.com/users'
+      'https://jsonplaceholder.typicode.com/users',
     );
   }
 
