@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
+import { delay, Subject } from 'rxjs';
 import { User } from './user.interface';
 
 @Injectable({
@@ -23,9 +23,15 @@ export class UserService {
   }
 
   getById(id: string | number) {
-    return this.httpClient.get<User>(
+    const obs$ = this.httpClient.get<User>(
       'https://jsonplaceholder.typicode.com/users/' + id
     );
+
+    if (id === '4') {
+      return obs$.pipe(delay(3000));
+    }
+
+    return obs$;
   }
 
   create(user: User) {
